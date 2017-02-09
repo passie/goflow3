@@ -60,7 +60,8 @@ socket.on('disconnect', function() {
 socket.on('devices', function(devices) {
     for (var i = 0; i < devices.length; i++) {
         if (devices[i].template = 'switch') {
-            $(".wrapper").append("<div class=device><div class=device-icon " + devices[i].template + "></div><h3>" + devices[i].name + "</h3></div></br></br>")
+            $(".wrapper").append("<div class=device_wrapper><div class=device_icon><i class=material-icons>lightbulb_outline</i></div><div class=device_name>" + devices[i].name + "</div><div class=device_spacer></div><div class=device_state><i class=material-icons>settings_power</i></div></div></br>")
+                //<div class=device><div class=device-icon " + devices[i].template + "></div><h3>" + devices[i].name + "</h3></div></br></br>")
             console.log(devices[i])
         }
     }
