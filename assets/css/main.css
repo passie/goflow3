@@ -132,6 +132,7 @@
             margin: 0;
             text-align: center;
             color: #fff;
+            font-family: 'Open Sans', sans-serif;
         }
         
         .switch:hover {
@@ -153,4 +154,5 @@
             margin: 0;
             text-align: center;
             color: #000;
+            font-family: 'Open Sans', sans-serif;
         }
