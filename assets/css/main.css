@@ -17,13 +17,13 @@
             margin: 15% auto 10% 25%;
             text-align: center;
         }
-
+        
         #wrapper {
             min-width: 1280px;
             max-width: 2048px;
             float: left;
         }
-
+        
         #sidebar {
             width: 25%;
             max-width: 250px;
@@ -32,13 +32,13 @@
             background-color: #2E313A;
             height: 100%;
         }
-
+        
         #content {
             float: left;
             min-width: 1030px;
             width: 75%;
         }
-
+        
         #heading {
             height: 70px;
             padding-top: 30px;
@@ -46,19 +46,15 @@
             font-family: 'Tangerine';
             background: #FFFFFF;
         }
-
+        
         #data {
             margin-left: 25px;
         }
-
-
-        
         /*.material-icons>#icon {
             font-size: 72px;
             color: #FEFFFE;
             vertical-align: middle;
         }*/
-        
         /*#menu {
             width: 150px;
             float: left;
@@ -67,6 +63,7 @@
             background-color: #2E313A;
         }
                */
+        
         ul {
             list-style-type: none;
             margin: 0;
@@ -116,65 +113,44 @@
             width: 1400px;
         }
         
-        .device_wrapper {
-            height: 75px;
-            width: 450px;
-        }
-        
-        .device_icon {
-            height: 75px;
-            width: 100px;
-            font-size: 6150px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #FAFBFA;
-            color: #F84E75;
-            float: left;
-            -webkit-border-radius: 5px 0px 0px 5px;
-            -moz-border-radius: 5px 0px 0px 5px;
-            border-radius: 5px 0px 0px 5px;
+        .switch {
+            display: inline-block;
+            margin: 2px 2px 0;
+            width: 280px;
+            height: 180px;
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, .1);
+            padding: 0px;
             text-align: center;
-            margin: 0;
-            padding: 0;
         }
         
-        .device_name {
-            width: 200px;
-            height: 75px;
-            color: #000;
-            font-size: 20px;
-            background-color: #FEFFFE;
-            float: left;
+        .switch>h3 {
             text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .device_type {
-            float: left;
-        }
-        
-        .device_spacer {
-            background-color: #ECEEF5;
-            float: left;
-            padding: 1px;
-        }
-        
-        .device_state {
-            background-color: #FEFFFE;
-            width: 70px;
-            height: 75px;
-            color: #F84E75;
             font-size: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #FEFFFE;
-            float: left;
-            -webkit-border-radius: 0px 5px 5px 0px;
-            -moz-border-radius: 0px 5px 5px 0px;
-            border-radius: 0px 5px 5px 0px;
+            font-weight: 100;
+            text-transform: none;
+            margin: 0;
             text-align: center;
+            color: #fff;
+        }
+        
+        .switch:hover {
+            display: inline-block;
+            margin: 2px 2px 0;
+            width: 280px;
+            height: 180px;
+            overflow: hidden;
+            background-color: #fff;
+            padding: 0px;
+            color: #000;
+        }
+        
+        .switch>h3:hover {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 100;
+            text-transform: none;
+            margin: 0;
+            text-align: center;
+            color: #000;
         }

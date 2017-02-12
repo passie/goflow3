@@ -26,18 +26,23 @@ socket.on('disconnect', function(data) {
 
 
 socket.on('devices', function(devices) {
-    for(item in devices) {
-        if(devices[item].template == 'switch') {
+    for (item in devices) {
+        if (devices[item].template == 'switch') {
 
-            var html = "<div id="+ devices[item].name + " class=\"device_wrapper\">\
-                    <div class=\"device_icon\">\
-                        <i class=\"material-icons\">lightbulb_outline</i>\
-                    </div>\
-                    <div class=\"device_name\">" + devices[item].name + "</div>\
-                    <div class=\"device_state\">\
-                        <i class=\"material-icons\">settings_power</i>\
-                    </div>\
-                </div>";
+            var html = "<div id=" + devices[item].name + " class=\"switch\">\
+                        <img src=\"assets/img/ico_doorbell.png\">\
+                        <h3>" + devices[item].name + "</h3>\
+                     </div>";
+
+            // <div class=\"device_icon\">\
+            //     <i class=\"material-icons\">lightbulb_outline</i>\
+            // </div>\
+            // <div class=\"device_name\">" + devices[item].name + "</div>\
+            // <div class=\"device_spacer\">3</div>\
+            // <div class = \"device_state\"></div>\
+            //     <i class=\"material-icons\">settings_power</i>\
+            // </div>\
+
 
             $("#data").append(html);
         }
@@ -49,15 +54,27 @@ socket.on('devices', function(devices) {
 //     alert( "Handler for .click() called." );
 // });
 
+var switchId;
+$(document).off('click', '.switch').on('click', '.switch', function(e) {
+    switchId = $(this).attr("id");
+    socket.emit('call', {
+        id: 'executeAction1',
+        action: 'executeAction',
+        params: {
+            actionString: 'toggle ' + switchId
+        }
+    });
+});
 
-
-
-
-
-
-
-
-// $("#target").click()
+// $("#target").click(function() {
+//     socket.emit('call', {
+//         id: 'executeAction1',
+//         action: 'executeAction',
+//         params: {
+//             actionString: 'toggle keukenlamp'
+//         }
+//     });
+// });
 
 // $(document).off('click', '#target').on('click', '#target', function(e) {
 //     socket.emit('call', {
