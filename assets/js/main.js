@@ -35,6 +35,7 @@ socket.on('groups', function(groups) {
 });
 
 socket.on('devices', function(devices) {
+    console.log()
     for (item in devices) {
         if (devices[item].template == 'switch') {
 
