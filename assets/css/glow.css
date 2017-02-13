@@ -13,7 +13,7 @@
       align-items: center;
       font-family: monospace;
       justify-content: center;
-      background-color: #1d212b;
+      background-color: #222322;
   }
   
   #glow {
@@ -24,7 +24,7 @@
       line-height: 70px;
       text-align: center;
       color: #252B37;
-      background-color: #151823;
+      background-color: #222322;
       animation: textColor 10s ease infinite;
       font-family: 'Tangerine', serif;
   }
@@ -45,7 +45,7 @@
       -ms-filter: blur(5vw);
       filter: blur(5vw);
       background: linear-gradient(270deg, #0fffc1, #7e0fff);
-      background-size: 200% 200%;
+      background-size: 100% 100%;
       animation: animateGlow 10s ease 10s;
   }
   

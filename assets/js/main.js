@@ -24,6 +24,15 @@ socket.on('disconnect', function(data) {
     console.log('disconnected');
 });
 
+socket.on('groups', function(groups) {
+    console.log(groups)
+    for (item in groups) {
+        var html = "<div id=" + groups[item].name + " class=\"groups\">\
+                        <h1>" + groups[item].name + "</h1>\
+                        </div>";
+        $("#groups").append(html);
+    }
+});
 
 socket.on('devices', function(devices) {
     for (item in devices) {
@@ -33,17 +42,6 @@ socket.on('devices', function(devices) {
                         <img src=\"assets/img/ico_doorbell.png\">\
                         <h3>" + devices[item].name + "</h3>\
                      </div>";
-
-            // <div class=\"device_icon\">\
-            //     <i class=\"material-icons\">lightbulb_outline</i>\
-            // </div>\
-            // <div class=\"device_name\">" + devices[item].name + "</div>\
-            // <div class=\"device_spacer\">3</div>\
-            // <div class = \"device_state\"></div>\
-            //     <i class=\"material-icons\">settings_power</i>\
-            // </div>\
-
-
             $("#data").append(html);
         }
     }
