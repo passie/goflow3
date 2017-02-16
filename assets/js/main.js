@@ -24,8 +24,9 @@ socket.on('disconnect', function(data) {
     console.log('disconnected');
 });
 
+var boe;
 socket.on('groups', function(groups) {
-    console.log(groups)
+    var boe = groups;
     for (item in groups) {
         var html = "<div id=" + groups[item].name + " class=\"groups\">\
                         <h1>" + groups[item].name + "</h1>\
@@ -34,19 +35,25 @@ socket.on('groups', function(groups) {
     }
 });
 
-socket.on('devices', function(devices) {
-    console.log()
-    for (item in devices) {
-        if (devices[item].template == 'switch') {
-
-            var html = "<div id=" + devices[item].name + " class=\"switch\">\
-                        <img src=\"assets/img/ico_doorbell.png\">\
-                        <h3>" + devices[item].name + "</h3>\
-                     </div>";
-            $("#data").append(html);
-        }
+socket.on('devices', function(groups) {
+    console.log(boe)
+    for (item in groups) {
+        console.log(boe[item].name);
     }
 });
+
+
+// for (item in devices) {
+//     if (devices[item].template == 'switch') {
+
+//         var html = "<div id=" + devices[item].name + " class=\"switch\">\
+//                         <img src=\"assets/img/ico_doorbell.png\">\
+//                         <h3>" + devices[item].name + "</h3>\
+//                      </div>";
+//         $("#data").append(html);
+//     }
+// }
+// });
 
 // $(".device_icon").click(function(data) {
 //     console.log(data);
