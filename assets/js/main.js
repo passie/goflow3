@@ -25,21 +25,27 @@ socket.on('disconnect', function(data) {
 });
 
 var boe;
+
+var devices;
+var groups;
+
 socket.on('groups', function(groups) {
-    var boe = groups;
     for (item in groups) {
         var html = "<div id=" + groups[item].name + " class=\"groups\">\
                         <h1>" + groups[item].name + "</h1>\
                         </div>";
         $("#groups").append(html);
     }
+    console.log(devices);
 });
 
-socket.on('devices', function(groups) {
-    console.log(boe)
-    for (item in groups) {
-        console.log(boe[item].name);
-    }
+// console.log('sss: ' + boe);
+socket.on('devices', function(nodes) {
+    // console.log('ccc' + groups);
+    // for (item in groups) {
+    //     //console.log(boe[item].name);
+    // }
+    devices = nodes;
 });
 
 
