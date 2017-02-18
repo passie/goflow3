@@ -24,32 +24,30 @@ socket.on('disconnect', function(data) {
     console.log('disconnected');
 });
 
-var boe;
-
 var devices;
 var groups;
 
-// socket.on('groups', function(groups) {
-//     for (item in groups) {
-//         var html = "<div id=" + groups[item].name + groups[item].devices + " class=\"groups\">\
-//                         <h1>" + groups[item].name + "</h1>\
-//                         </div>";
-//         $("#groups").append(html);
-//     }
-// });
-
-socket.on('devices', function(devices) {
-    console.log(devices)
-    for (item in devices) {
-        if (devices[item].template == 'switch') {
-            var html = "<div id=" + devices[item].name + " class=\"switch\">\
-                        <img src=\"assets/img/ico_doorbell.png\" height=\"50\" width=\"70\">\
-                        <h3>" + devices[item].name + "</h3>\
-                     </div>";
-            $("#data").append(html);
-        }
+socket.on('rules', function(rules) {
+    for (item in rules) {
+        var html = "<div id=" + rules[item].name + " class=\"rules\">\
+                            <h1>" + rules[item].name + "</h1>\
+                            </div>";
+        $("#rules").append(html);
     }
 });
+
+// socket.on('devices', function(devices) {
+//     console.log(devices)
+//     for (item in devices) {
+//         if (devices[item].template == 'switch') {
+//             var html = "<div id=" + devices[item].name + " class=\"switch\">\
+//                         <img src=\"assets/img/ico_doorbell.png\" height=\"50\" width=\"70\">\
+//                         <h3>" + devices[item].name + "</h3>\
+//                      </div>";
+//             $("#data").append(html);
+//         }
+//     }
+// });
 
 
 // for (item in devices) {
