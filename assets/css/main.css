@@ -157,3 +157,16 @@
             right: 15px;
             background-image: "assets/img/tenict_logo.png"
         }
+        
+        .groups {
+            background-color: #FAFBFA;
+            border-left-color: #D10030;
+            border-style: solid;
+            border-width: thin;
+            width: 200px;
+        }
+        
+        #add_group {
+            border-style: dashed;
+            border-color: grey;
+        }

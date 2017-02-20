@@ -31,7 +31,7 @@ socket.on('groups', function(groups) {
     for (item in groups) {
         var html = "<div id=" + groups[item].name + groups[item].devices + " class=\"groups\">\
                         <h1>" + groups[item].name + "</h1>\
-                        </div>";
+                        </div></br>";
         $("#groups").append(html);
     }
 });
@@ -67,16 +67,25 @@ socket.on('groups', function(groups) {
 //     alert( "Handler for .click() called." );
 // });
 
-var switchId;
-$(document).off('click', '.switch').on('click', '.switch', function(e) {
-    switchId = $(this).attr("id");
+$(document).off('click', '#add_group').on('click', '#add_group', function(e) {
     socket.emit('call', {
-        id: 'executeAction1',
-        action: 'executeAction',
+        id: 'groupAdd',
+        action: 'addGroup',
         params: {
-            actionString: 'toggle ' + switchId
+            groupId: 'iets',
+            group: 'iets'
         }
-    });
+    })
+    socket.emit('call', {
+        id: 'boe',
+        action: 'callDeviceAction',
+        params: {
+            deviceId: 'keukenlamp',
+            actionName: 'turnOn'
+        }
+    })
+
+
 });
 
 // $("#target").click(function() {
