@@ -80,18 +80,6 @@ $(document).off('click', '#add_group').on('click', '#add_group', function(e) {
     })
 });
 
-socket.on('groups', function(messages) {
-    socket.emit('call', {
-        id: 'queryMessages',
-        action: 'queryMessages',
-        params: {
-            criteria: {
-                level: 'any',
-            }
-        }
-    })
-});
-
 
 socket.on('callResult', function(data) {
     console.log(data);
