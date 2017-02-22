@@ -73,20 +73,30 @@ $(document).off('click', '#add_group').on('click', '#add_group', function(e) {
         action: 'addGroup',
         params: {
             groupId: 'iets',
-            group: 'iets'
+            group: {
+                name: 'iets'
+            }
         }
     })
-    socket.emit('call', {
-        id: 'boe',
-        action: 'callDeviceAction',
-        params: {
-            deviceId: 'keukenlamp',
-            actionName: 'turnOn'
-        }
-    })
-
-
 });
+
+socket.on('groups', function(messages) {
+    socket.emit('call', {
+        id: 'queryMessages',
+        action: 'queryMessages',
+        params: {
+            criteria: {
+                level: 'any',
+            }
+        }
+    })
+});
+
+
+socket.on('callResult', function(data) {
+    console.log(data);
+});
+
 
 // $("#target").click(function() {
 //     socket.emit('call', {

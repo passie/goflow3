@@ -170,3 +170,22 @@
             border-style: dashed;
             border-color: grey;
         }
+        
+        #messages {
+            margin-top: 200px;
+            margin-left: 200px;
+        }
+        
+        .mtime {
+            background-color: yellow;
+        }
+        
+        .mLevel {
+            background-color: red;
+            float: left;
+        }
+        
+        .mtext {
+            background-color: grey;
+            float: left;
+        }
