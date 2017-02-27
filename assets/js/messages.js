@@ -90,11 +90,22 @@ socket.emit('call', {
 socket.on('callResult', function(data) {
     for (items in data) {
         // console.log(data[items].messages)
-        for (iets in data[items].messages) {
-            var d = new Date(data[items].messages[iets].time).toLocaleString();;
-            var html = "<div class=mTime>" + d + "</div>\
-                        <div class=mLevel>" + data[items].messages[iets].level + "</div>\
-            <div class=mText>" + data[items].messages[iets].text + "</div>";
+        for (log in data[items].messages) {
+            var d = new Date(data[items].messages[log].time).toLocaleString();
+            if (data[items].messages[log].level = 'info') {
+                var mention = "<i class=\"fa fa-info-circle\" aria-hidden=\"true\"></i>"
+            } else if (data[items].messages[log].level = 'warning') {
+                var mention = "<i class=\"fa fa-exclamation\" aria-hidden=\"true\"></i>"
+            } else if (data[items].messages[log].level = 'error') {
+                var mention = "<i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i>"
+            } else {
+                var mention = "<i class=\"fa fa-question-circle\" aria-hidden=\"true\"></i>"
+            }
+            var html = "<div class=meswrapper>\
+            <div class=mLevel" + data[items].messages[log].level + ">" + mention + "</div>\
+            <div class=mTime>" + d + "</div>\
+            <div class=mText>" + data[items].messages[log].text + "</div>\
+            </div>";
             $("#messages").append(html);
         }
 

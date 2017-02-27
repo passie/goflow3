@@ -1,191 +1,200 @@
-        @font-face {
-            font-family: 'Tangerine';
-            font-style: normal;
-            font-weight: normal;
-            src: local('Tangerine'), url('/fonts/ShorelinesScriptBold.otf') format('truetype');
-        }
-        
-        html,
-        body {
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-        
-        .logo {
-            font-size: 72px;
-            color: #FEFFFE;
-            margin: 15% auto 10% 25%;
-            text-align: center;
-        }
-        
-        #wrapper {
-            min-width: 1280px;
-            max-width: 2048px;
-            float: left;
-        }
-        
-        #sidebar {
-            width: 25%;
-            max-width: 250px;
-            float: left;
-            font-size: 20px;
-            height: 100%;
-        }
-        
-        #content {
-            float: left;
-            min-width: 1030px;
-            width: 75%;
-        }
-        
-        #heading {
-            height: 70px;
-            padding-top: 30px;
-            text-align: center;
-            font-family: 'Tangerine';
-            background: #FFFFFF;
-        }
-        
-        #data {
-            margin-left: 25px;
-        }
-        /*.material-icons>#icon {
-            font-size: 72px;
-            color: #FEFFFE;
-            vertical-align: middle;
-        }*/
-        /*#menu {
-            width: 150px;
-            float: left;
-            font-size: 20px;
-            background: gray;
-            background-color: #2E313A;
-        }
-               */
-        
-        .header_container {
-            position: relative;
-            width: 100%;
-            min-height: 100%;
-            padding: 0;
-        }
-        
-        #header {
-            width: 100%;
-            background: #FEFFFE;
-            padding: 10px 0;
-            height: 80px;
-            font-family: 'Tangerine', serif;
-            text-align: center;
-            margin: 0;
-        }
-        
-        #body {
-            background-color: #ECEEF5;
-            height: 100%;
-        }
-        
-        #body_wrapper {
-            height: 100%;
-            width: 1400px;
-        }
-        
-        .groups {
-            color: #A0A1A0;
-            font-size: 9px;
-            font-family: 'Open Sans', sans-serif;
-        }
-        
-        .rules {
-            color: #A0A1A0;
-            font-size: 9px;
-            font-family: 'Open Sans', sans-serif;
-        }
-        
-        .switch {
-            font-size: 48px;
-            display: inline-block;
-            margin: 2px 2px 0;
-            width: 140px;
-            height: 90px;
-            overflow: hidden;
-            background-color: #EDEEED;
-            padding: 0px;
-            text-align: center;
-            cursor: hand;
-        }
-        
-        .switch>h3 {
-            text-align: center;
-            font-size: 12px;
-            font-weight: 100;
-            text-transform: none;
-            margin: 0;
-            text-align: center;
-            color: #1E1F1E;
-            font-family: 'Open Sans', sans-serif;
-            cursor: hand;
-        }
-        
-        .switch:hover {
-            display: inline-block;
-            margin: 2px 2px 0;
-            width: 140px;
-            height: 90px;
-            overflow: hidden;
-            background-color: #EDEEED;
-            padding: 0px;
-            color: #000;
-            cursor: -webkit-grab;
-            cursor: -moz-grab;
-        }
-        
-        .switch>h3:hover {
-            text-align: center;
-            font-weight: 100;
-            text-transform: none;
-            margin: 0;
-            text-align: center;
-            color: #D10030;
-            font-family: 'Open Sans', sans-serif;
-            cursor: hand;
-        }
-        
-        #logo {
-            position: absolute;
-            bottom: 15px;
-            right: 15px;
-            background-image: "assets/img/tenict_logo.png"
-        }
-        
-        .groups {
-            background-color: #FAFBFA;
-            border-left-color: #D10030;
-            border-style: solid;
-            border-width: thin;
-            width: 200px;
-        }
-        
-        #add_group {
-            border-style: dashed;
-            border-color: grey;
-        }
-        
-        #messages {
-            margin-top: 200px;
-            margin-left: 200px;
-        }
-        
-        .mtime {
-            background-color: yellow;
-        }
-        
-        .mLevel {
-            background-color: red;
-            float: left;
-        }
-        
-        .mtext {
-            background-color: grey;
-            float: left;
-        }
+    @font-face {
+        font-family: 'Tangerine';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Tangerine'), url('/fonts/ShorelinesScriptBold.otf') format('truetype');
+    }
+    
+    html,
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .logo {
+        font-size: 72px;
+        color: #FEFFFE;
+        margin: 15% auto 10% 25%;
+        text-align: center;
+    }
+    
+    #wrapper {
+        min-width: 1280px;
+        max-width: 2048px;
+        float: left;
+    }
+    
+    #sidebar {
+        width: 25%;
+        max-width: 250px;
+        float: left;
+        font-size: 20px;
+        height: 100%;
+    }
+    
+    #content {
+        float: left;
+        min-width: 1030px;
+        width: 75%;
+    }
+    
+    #heading {
+        height: 70px;
+        padding-top: 30px;
+        text-align: center;
+        font-family: 'Tangerine';
+        background: #FFFFFF;
+    }
+    
+    #data {
+        margin-left: 125px;
+        width: 70%;
+    }
+    
+    .header_container {
+        position: relative;
+        width: 100%;
+        min-height: 100%;
+        padding: 0;
+    }
+    
+    #header {
+        width: 100%;
+        background: #FEFFFE;
+        padding: 10px 0;
+        height: 80px;
+        font-family: 'Tangerine', serif;
+        text-align: center;
+        margin: 0;
+    }
+    
+    #body {
+        background-color: #ECEEF5;
+        height: 100%;
+    }
+    
+    #body_wrapper {
+        height: 100%;
+        width: 1400px;
+    }
+    
+    .groups {
+        color: #A0A1A0;
+        font-size: 9px;
+        font-family: 'Open Sans', sans-serif;
+    }
+    
+    .rules {
+        color: #A0A1A0;
+        font-size: 9px;
+        font-family: 'Open Sans', sans-serif;
+    }
+    
+    .switch {
+        font-size: 90px;
+        display: inline-block;
+        margin: 3px 3px 0;
+        width: 140px;
+        height: 90px;
+        overflow: hidden;
+        background-color: #EDEEED;
+        padding: 0px;
+        text-align: center;
+        cursor: hand;
+    }
+    
+    .switch>h3 {
+        text-align: center;
+        font-size: 12px;
+        font-weight: 100;
+        text-transform: none;
+        margin: 0;
+        text-align: center;
+        color: #1E1F1E;
+        font-family: 'Open Sans', sans-serif;
+        cursor: hand;
+    }
+    
+    .switch:hover {
+        display: inline-block;
+        margin: 3px 3px 0;
+        width: 140px;
+        height: 90px;
+        overflow: hidden;
+        background-color: #EDEEED;
+        padding: 0px;
+        color: #000;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        cursor: -webkit-grab;
+        cursor: -moz-grab;
+    }
+    
+    .switch>h3:hover {
+        text-align: center;
+        font-weight: 100;
+        text-transform: none;
+        margin: 0;
+        text-align: center;
+        color: #D10030;
+        font-family: 'Open Sans', sans-serif;
+        cursor: hand;
+    }
+    
+    #logo {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        background-image: "assets/img/tenict_logo.png"
+    }
+    
+    .groups {
+        background-color: #FAFBFA;
+        border-left-color: #D10030;
+        border-style: solid;
+        border-width: thin;
+        width: 200px;
+    }
+    
+    #add_group {
+        border-style: dashed;
+        border-color: grey;
+    }
+    
+    #messages {
+        margin-top: 200px;
+        margin-left: 200px;
+        width: 1000px;
+        width: auto;
+        line-height: 14px;
+    }
+    
+    .meswrapper {
+        display: flex;
+        text-align: center;
+        height: 30px;
+    }
+    
+    .mtime {
+        margin: 10px;
+        vertical-align: middle;
+    }
+    
+    .mLevelinfo {
+        text-align: center;
+        margin: auto;
+        margin: 10px;
+        color: green;
+    }
+    
+    .mLevelwarning {
+        color: orange;
+    }
+    
+    .mLevelerror {
+        color: red;
+    }
+    
+    .mtext {
+        display: inline-block;
+        margin: 10px;
+    }

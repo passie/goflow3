@@ -43,10 +43,17 @@ socket.on('devices', function(devices) {
     for (item in devices) {
         if (devices[item].template == 'switch') {
             var html = "<div id=" + devices[item].name + " class=\"switch\">\
-                        <img src=\"assets/img/ico_doorbell.png\" height=\"50\" width=\"70\">\
+                        <i class=\"fa fa-lightbulb-o fa-5x\" aria-hidden=\"true\"></i>\
                         <h3>" + devices[item].name + "</h3>\
                      </div>";
             $("#data").append(html);
+        } else if (devices[item].template == 'dimmer') {
+            var html = "<div id=" + devices[item].name + " class=\"switch\">\
+                        <i class=\"fa fa-arrow-right fa-5x\" aria-hidden=\"true\"></i>\
+                        <h3>" + devices[item].name + "</h3>\
+                     </div>";
+            $("#data").append(html);
+
         }
     }
 });
