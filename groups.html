@@ -11,16 +11,29 @@
 
 <body>
     <div id="menu"></div>
-    <div id="glow"></div>
-    <div id="groups"></div>
-    <input type="text" name="groupname">
-    </br>
-    </br>
-    <div id="add_group">
+    <!--<div id="glow"></div>-->
+    <div id="groups">
+        <div class="data">
+        </div>
+    </div>
+    <div id="settings">
+        <i class="fa fa-cog" aria-hidden="true"></i>
+    </div>
+    <div id="contact">
+        <br> Settings
+        <div id="close"><i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <br><br>
+        <hr> Change wallpaper
+        <div id="wallpaper"></div>
+    </div>
+    <!--<input id="groupInput" type="text" name="groupname">-->
+
+    <!--<div id="add_group">
         </br>
         <i class="fa fa-plus-square" aria-hidden="true" class="add_group"></i>
-    </div>
-    </div>
+    </div>-->
+    <!--</div>-->
     <div id="logo"><img src="assets/img/tenict_logo.png" height=73 withd=60></div>
     <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -28,6 +41,32 @@
     <script>
         $(function() {
             $("#menu").load("menu.html");
+        });
+        $(function() {
+            $("#settings").click(function() {
+                $("#contact").show("fast");
+                $("#settings").hide();
+                return false;
+            });
+        });
+        $(function() {
+            $("#close").click(function() {
+                $("#contact").hide();
+                $("#settings").show();
+                return false;
+            });
+        });
+
+        var folder = "assets/img/";
+        $.ajax({
+            url: folder,
+            success: function(data) {
+                $(data).find("a").attr("href", function(i, val) {
+                    if (val.match(/\.(jpe?g|png|gif|jpg)$/)) {
+                        $("#wallpaper").append("<img src='" + folder + val + "'>");
+                    }
+                });
+            }
         });
     </script>
 </body>

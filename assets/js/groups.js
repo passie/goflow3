@@ -28,12 +28,15 @@ var devices;
 var groups;
 
 socket.on('groups', function(groups) {
+    $(".data").empty(html);
     for (item in groups) {
-        var html = "<div id=" + groups[item].name + groups[item].devices + " class=\"groups\">\
-                        <h1>" + groups[item].name + "</h1>\
-                        </div></br>";
-        $("#groups").append(html);
+        var html = "<div id=" + groups[item].name + groups[item].devices + " class=\"switch\">\
+                        <h3>" + groups[item].name + "</h3>\
+                        </div>";
+        $(".data").append(html);
     }
+    var addButton = "<div class=\"addButton\"><input id=\"groupInput\" type=\"text\" name=\"groupname\"><div id=\"add_group\"><i class=\"fa fa-plus fa-6\" aria-hidden=\"true\"></i></div></div>";
+    $(".data").append(addButton);
 });
 
 // socket.on('devices', function(devices) {
@@ -67,17 +70,20 @@ socket.on('groups', function(groups) {
 //     alert( "Handler for .click() called." );
 // });
 
+var groupInput;
 $(document).off('click', '#add_group').on('click', '#add_group', function(e) {
+    groupInput = $("#groupInput").val();
     socket.emit('call', {
         id: 'groupAdd',
         action: 'addGroup',
         params: {
-            groupId: 'iets',
+            groupId: groupInput,
             group: {
-                name: 'iets'
+                name: groupInput
             }
         }
     })
+
 });
 
 

@@ -40,23 +40,25 @@ var groups;
 
 socket.on('devices', function(devices) {
     console.log(devices)
+    $("#data").empty(html);
     for (item in devices) {
         if (devices[item].template == 'switch') {
             var html = "<div id=" + devices[item].name + " class=\"switch\">\
                         <i class=\"fa fa-lightbulb-o fa-5x\" aria-hidden=\"true\"></i>\
                         <h3>" + devices[item].name + "</h3>\
                      </div>";
-            $("#data").append(html);
+            $(".data").append(html);
         } else if (devices[item].template == 'dimmer') {
             var html = "<div id=" + devices[item].name + " class=\"switch\">\
                         <i class=\"fa fa-arrow-right fa-5x\" aria-hidden=\"true\"></i>\
                         <h3>" + devices[item].name + "</h3>\
                      </div>";
-            $("#data").append(html);
+            $(".data").append(html);
 
         }
     }
 });
+
 
 
 // for (item in devices) {

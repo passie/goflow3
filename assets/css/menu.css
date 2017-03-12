@@ -20,8 +20,8 @@ nav.main-menu.expanded {
     overflow: visible;
 }
 .main-menu {
-    background: #fbfbfb;
-    border-right: 1px solid #e5e5e5;
+    background: #000;
+    border-right: 1px solid #D10030;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -33,6 +33,8 @@ nav.main-menu.expanded {
     transition: width .05s linear;
     -webkit-transform: translateZ(0) scale(1, 1);
     z-index: 1000;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
 }
 .main-menu>ul {
     margin: 7px 0;

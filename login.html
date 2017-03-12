@@ -1,0 +1,78 @@
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="assets/css/login.css" rel="stylesheet">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+
+    <div class="login">
+        <h2 class="active"> sign in </h2>
+
+        <h2 class="nonactive"> sign up </h2>
+        <form>
+
+
+
+            <input type="text" class="text" name="username">
+            <span>username</span>
+
+            <br>
+
+            <br>
+
+            <input type="password" class="text" name="password">
+            <span>password</span>
+            <br>
+
+            <input type="checkbox" id="checkbox-1-1" class="custom-checkbox" />
+            <label for="checkbox-1-1">Keep me Signed in</label>
+
+            <button class="signin">
+      Sign In
+    </button>
+
+
+            <hr>
+
+            <a href="#">Forgot Password?</a>
+        </form>
+
+    </div>
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script>
+        formData = {
+            username: $("#username").val(),
+            password: $("#password").val()
+        }
+        if ($("#username").val() == '') {
+            alert("Enter your username");
+        } else if ($("#password").val() == '') {
+            alert("Enter your password");
+        } else {
+            $.ajax({
+                type: 'POST',
+                contentType: 'application/json',
+                url: "http://localhost:10001/login.html",
+                dataType: "json",
+                data: formData,
+                success: function(data) {
+                    //success handler
+                },
+                error: function(data) {
+                    //error handler
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

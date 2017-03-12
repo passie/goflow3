@@ -106,7 +106,7 @@ socket.on('callResult', function(data) {
             <div class=mTime>" + d + "</div>\
             <div class=mText>" + data[items].messages[log].text + "</div>\
             </div>";
-            $("#messages").append(html);
+            $(".data").append(html);
         }
 
     }
