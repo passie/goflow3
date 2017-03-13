@@ -10,6 +10,7 @@
         padding: 0 !important;
         background-image: url("../img/2.jpg");
         background-repeat: no-repeat;
+        transition: background 3s linear;
     }
     
     .logo {
@@ -120,7 +121,7 @@
         background: #FEFFFE;
         color: #000;
         height: 100%;
-        width: 200px;
+        width: 300px;
     }
     
     #close {

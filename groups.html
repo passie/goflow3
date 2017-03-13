@@ -25,7 +25,11 @@
         </div>
         <br><br>
         <hr> Change wallpaper
-        <div id="wallpaper"></div>
+        <div id="wallpaper">
+            <img src="assets/img/thumb_1.jpg">
+            <img src="assets/img/thumb_2.jpg">
+
+        </div>
     </div>
     <!--<input id="groupInput" type="text" name="groupname">-->
 
@@ -39,6 +43,17 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="assets/js/groups.js" type="text/javascript"></script>
     <script>
+        $('#wallpaper img').click(function() {
+            // $(this).css("background-image", "url(assets/img/2.jpg)");
+            //var iets = $(this).css('src', $(this).attr('src').replace('thumb_', ''));
+            //alert($(this).attr('src').replace('assets/img/thumb_', ''))
+            var thumbChanger = $(this).attr('src').replace('thumb_', '')
+
+            $('body').css(
+                "background-image", "url(" + thumbChanger + ")"
+            );
+
+        });
         $(function() {
             $("#menu").load("menu.html");
         });
