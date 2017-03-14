@@ -28,16 +28,21 @@ var devices;
 var groups;
 
 socket.on('groups', function(groups) {
+
     $(".data").empty(html);
     for (item in groups) {
+
         var html = "<div id=" + groups[item].name + groups[item].devices + " class=\"switch\">\
+                          <div class=\"close\" name=" + groups[item].id + "><i class=\"fa fa-times\" aria-hidden=\"true\"></i></div> \
                         <h3>" + groups[item].name + "</h3>\
+                        <h3>" + groups[item].devices.length + "</h3>\
                         </div>";
         $(".data").append(html);
     }
     var addButton = "<div class=\"addButton\"><input id=\"groupInput\" type=\"text\" name=\"groupname\"><div id=\"add_group\"><i class=\"fa fa-plus fa-6\" aria-hidden=\"true\"></i></div></div>";
     $(".data").append(addButton);
 });
+
 
 // socket.on('devices', function(devices) {
 //     console.log(devices)
@@ -80,6 +85,23 @@ $(document).off('click', '#add_group').on('click', '#add_group', function(e) {
             groupId: groupInput,
             group: {
                 name: groupInput
+            }
+        }
+    })
+
+});
+
+var groupDelete;
+$(document).off('click', '.close').on('click', '.close', function(e) {
+    groupDelete = $(".close").attr('name');
+
+    socket.emit('call', {
+        id: 'groupDelete',
+        action: 'removeGroup',
+        params: {
+            groupId: groupDelete,
+            group: {
+                name: groupDelete
             }
         }
     })
